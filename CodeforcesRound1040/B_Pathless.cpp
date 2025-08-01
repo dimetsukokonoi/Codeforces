@@ -25,35 +25,19 @@ void solve() {
     int n, sum; cin>>n>>sum;
     vector<int> v(n);
     int add = 0;
-    int indx0 = -1, indx1 = -1, indx2 = -1;
+    int cnt[3] = {0,0,0};
     for(int i=0; i<n; i++){
         cin>>v[i];
         add+=v[i];
+        cnt[v[i]]++;
     }
-    sort(rall(v));
-    if(add==sum){
-        cout<<-1<<nl;
-        return;
+    if(sum<add || sum-add==1){
+        while(cnt[0]--) cout<<"0 ";
+        while(cnt[2]--) cout<<"2 ";
+        while(cnt[1]--) cout<<"1 ";
     }
-    else if(add<sum){
-        for(auto a :  v){
-            cout<<a<<" ";
-        }
-        cout<<nl;
-        return;
-    }
-    add = 0;
-    bool f = true;
-    for(int i=0; i<n; i++){
-        add+=v[i];
-        if(add = sum){
-            if(i==n-1){
-                f=  false;
-                break;
-            }
-        }
-    }
-
+    else cout<<"-1";
+    cout<<nl;
 }
 
 int32_t main() {
