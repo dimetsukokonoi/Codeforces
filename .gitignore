@@ -1,20 +1,34 @@
 # Executable files
 *.exe
+*.out
+*.class
 
-# Object files
+# Object and compiled files
 *.o
 *.obj
+*.pyc
+*.pyo
+*.pyd
 
 # Debug files
 *.dSYM/
 *.su
 *.gch
 
-# Compiled binaries
-*.out
-
 # VS Code debug
 .vscode/
+.vscode_debug/
+
+# Python
+__pycache__/
+*.egg-info/
+dist/
+build/
 
 # macOS
 .DS_Store
+
+# IDE
+.idea/
+*.swp
+*.swo
