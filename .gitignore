@@ -1,0 +1,20 @@
+# Executable files
+*.exe
+
+# Object files
+*.o
+*.obj
+
+# Debug files
+*.dSYM/
+*.su
+*.gch
+
+# Compiled binaries
+*.out
+
+# VS Code debug
+.vscode/
+
+# macOS
+.DS_Store
