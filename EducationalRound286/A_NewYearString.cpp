@@ -2,7 +2,7 @@
 using namespace std;
 
 #define         fastIO   ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);cout.precision(numeric_limits<double>::max_digits10);
-#define           ll     long long
+#define           int    long long
 #define          all(v)   v.begin(), v.end()
 #define         rall(v)   v.rbegin(), v.rend()
 #define           pb      push_back
@@ -11,10 +11,21 @@ using namespace std;
 #define          yes      cout << "YES\n"
 #define           no      cout << "NO\n"
 #define      isEven(l)    ((l) % 2 == 0)
-#define          gcd(a,b) __gcd(a,b)
+#define       gcd(a,b)    __gcd(a,b)
+
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; ++i) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
 
 void solve() {
-    
+    int n; cin>>n;
+    string s; cin>>s;
+    if(s.find("2025") == -1 || s.find("2026") != -1) cout<<0<<nl;
+    else cout<<1<<nl;
 }
 
 int32_t main() {
