@@ -2,7 +2,7 @@
 using namespace std;
 
 #define         fastIO   ios::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);cout.precision(numeric_limits<double>::max_digits10);
-#define           ll     long long
+#define           int    long long
 #define          all(v)   v.begin(), v.end()
 #define         rall(v)   v.rbegin(), v.rend()
 #define           pb      push_back
@@ -11,18 +11,26 @@ using namespace std;
 #define          yes      cout << "YES\n"
 #define           no      cout << "NO\n"
 #define      isEven(l)    ((l) % 2 == 0)
-#define          gcd(a,b) __gcd(a,b)
+#define       gcd(a,b)    __gcd(a,b)
+
+bool isPrime(int n) {
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; ++i) {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
 
 void solve() {
-    int n, k, l, c, d, p, nnl, np;
-    cin>>n>>k>>l>>c>>d>>p>>nnl>>np;
+    int a, b, c;
+    cin>>a>>b>>c;
+    vector<int> v;
+    v.pb(a);
+    v.pb(b); v.pb(c);
+    sort(all(v));
+    int ans = (v[1]-v[0])+(v[2]-v[1]);
+    cout<<ans<<nl;
 
-    int drink = k*l; int slice =  c*d; int salt  = p;
-    int mn = min(min(drink/nnl, salt/np), slice);
-    // cout<<"drink: "<<drink/nnl<<" "<<"slice: "<< slice/np<<" salt: "<<salt<<" min: "<<mn<<nl; 
-    if(salt<n) cout<<0<<nl;
-    else cout<<mn/n<<nl; 
-    
 }
 
 int32_t main() {
