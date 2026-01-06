@@ -1,3 +1,8 @@
+# Ignore all files without extensions (compiled executables)
+*
+!*.*
+!*/
+
 # Executable files
 *.exe
 *.out
