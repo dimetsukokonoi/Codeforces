@@ -22,40 +22,18 @@ bool isPrime(int n) {
 }
 
 void solve() {
-    int n; cin>>n;
-    vector<int> v(n);
-    int ans= 0;
-    for(int i=0; i<n; i++){
-        cin>>v[i];
+    int n,k; cin>>n>>k;
+    for(int i=0; i<33; i++){
+        int p = 1LL<<i;
+        int v1  =n/p;
+        int v2  =(n+p-1)/p;
+        
+        if(v1==k || v2 == k){
+            cout<<i<<nl;
+            return;
+        }
     }
-    // int mx = *max_element(all(v));
-    // int indx = max_element(all(v)) - v.begin();
-    // v.erase(v.begin() + indx);
-
-    // // for(auto a: v){
-    // //     cout<<a<<" ";
-    // // }
-    // // cout<<nl;
-    // for(int i=0; i<v.size()-1; i++){
-    //     ans+=abs(v[i]-v[i+1]);
-    // }
-    // cout<<ans<<nl;
-    // cout<<"Max element: "<<mx<<nl;
-    // cout<<"Max Element index: "<<indx<<nl;
-
-    // ans -= abs(v[indx]-v[indx-1])+abs(v[indx]-v[indx+1]);
-    // cout<<"current diff: "<<ans<<nl;
-    int mx  = -1;
-    int sum = 0;
-    for(int i=0; i<n-1; i++{
-        sum+=(abs(v[i]-v[i+1]));
-    }
-    int ans  =0;
-    for(int i=0; i<n-1; i++){
-        ans  = min (sum-(abs(v[0]-v[1])), sum-(abs(v[i]-v[i+1]));
-    }
-    cout<<mx<<nl;
-
+    cout<<-1<<nl;
 }
 
 int32_t main() {
